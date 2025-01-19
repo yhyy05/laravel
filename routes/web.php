@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/trade-histories/create', [TradeHistoryController::class, 'create'])->name('trade_histories.create');
+Route::get('/trade', [TradeHistoryController::class, 'create'])->name('trade.create');
 Route::post('/trade-histories', [TradeHistoryController::class, 'store'])->name('trade_histories.store');
 Route::get('/trade-histories/search-user', [TradeHistoryController::class, 'searchUser']);
 

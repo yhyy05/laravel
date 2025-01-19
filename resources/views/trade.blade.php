@@ -1,12 +1,14 @@
 <!-- resources/views/trade_histories/create.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>交易紀錄</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <h1>新增交易紀錄</h1>
 
@@ -25,6 +27,16 @@
 
         <label for="amount">金額</label>
         <input type="number" name="amount" step="0.01" required>
+
+        <!-- resources/views/trade.blade.php -->
+        <select name="events_id">
+            <option value="">選擇活動 (可選)</option>
+            @foreach($events as $event)
+                <option value="{{ $event->id }}">{{ $event->name }}</option>
+            @endforeach
+        </select>
+
+
 
         <label for="transaction_type">交易類型</label>
         <select name="transaction_type" required>
@@ -70,4 +82,5 @@
         });
     </script>
 </body>
+
 </html>

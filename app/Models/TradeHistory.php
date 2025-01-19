@@ -15,10 +15,16 @@ class TradeHistory extends Model
         'amount',
         'transaction_type',
         'status',
+        'events_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'events_id');
     }
 }
